@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int fib_sum(int n) {
+    if (n <= 1) {
+        return n; // base case, return the first two fibonacci numbers
+    } else {
+        return fib_sum(n - 1) + fib_sum(n - 2) + n; // recursive case, add current term to sum
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    int sum = fib_sum(n - 1); // n-1 because the function includes the n'th term in the sum
+
+    printf("Sum of Fibonacci series: %d\n", sum);
+
+    return 0;
+}
